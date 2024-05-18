@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Forget Password";
+    Layout = "_Layout";
+}
+@model IEnumerable<forgetData>;
+
+<h1>forgetPass</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+           
+            <th style="color:#ffff">options</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+       @{foreach(var item in Model)
+        {
+        <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.employeeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td class=" d-flex">
+
+                        <a href="/Welcome/EditPass/@item.employeeID" style="font-size:200%;color:gray">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                        </td>
+        </tr>
+        }}
+    </tbody>
